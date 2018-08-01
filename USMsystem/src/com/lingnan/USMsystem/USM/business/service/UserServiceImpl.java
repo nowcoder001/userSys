@@ -92,7 +92,6 @@ public class UserServiceImpl implements UserService{
 			pstm = conn.prepareStatement(sql);
 			pstm.executeUpdate();
 			flag = true;
-			
 		} catch (SQLException e) {
 			throw new ServiceException("用户注册失败......");
 		}
