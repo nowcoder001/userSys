@@ -148,7 +148,7 @@ public class DBUtils {
 	
 	/**
 	 * 关闭数据库连接
-	 * @param conn
+	 * @param conn 要关闭的数据库连接对象
 	 */
 	
 	public static void closeconn(Connection conn) {

@@ -37,7 +37,7 @@ public class TypeUtils {
 	 * 字符串转日期
 	 * @param str 要转换为日期格式的字符串
 	 * @return 返回指定格式的日期类型
-	 * @throws ParseException
+	 * @throws ParseException 格式转换异常
 	 */
 	public static Date strToDate(String str) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

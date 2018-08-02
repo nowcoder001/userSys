@@ -1,21 +1,14 @@
 package com.lingnan.USMsystem.business.dao;
-
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
-
 import com.lingnan.USMsystem.USM.domain.UserVO;
-import com.lingnan.USMsystem.common.constant.EnumType;
-import com.lingnan.USMsystem.common.dao.DaoFactory;
 import com.lingnan.USMsystem.common.exception.DaoException;
 import com.lingnan.USMsystem.common.exception.ServiceException;
 import com.lingnan.USMsystem.common.util.DBUtils;
-import com.lingnan.USMsystem.common.util.TypeUtils;
 
 /**
  * 用户dao的实现类
@@ -116,7 +109,8 @@ public class UserDaoImpl implements UserDao {
 		String mail = user.getMail();
 		// 注册时默认是普通用户
 		String power = "普通用户";
-		Date birth = (Date) user.getBirth();
+		// 将获取的java.util.Date格式的日期转换成java.sql.Date格式
+		Date birth = new java.sql.Date(user.getBirth().getTime());
 		// 注册时状态status默认为1，代表有效
 		String status = "1";
 		try {
@@ -203,7 +197,6 @@ public class UserDaoImpl implements UserDao {
 				user.setStatus(rs.getString("status"));
 			}
 		} catch (SQLException e) {
-			//throw new ServiceException("SQL语句运行错误......");
 			System.out.println("SQL语句运行错误......");
 		} finally {
 			DBUtils.closePreparedStatement(conn);
@@ -277,7 +270,7 @@ public class UserDaoImpl implements UserDao {
 
 	/**
 	 * 删除用户
-	 * @param id
+	 * @param id 用户的id
 	 */
 	public boolean deleteUser(int id) {
 		boolean flag = false;

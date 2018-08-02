@@ -16,8 +16,8 @@ public interface UserDao extends BaseDao{
 	/**
 	 * 注册用户/添加用户
 	 * 
-	 * @param user
-	 * @return
+	 * @param user 用户信息
+	 * @return true/false
 	 */
 	public boolean addUser(UserVO user);
 	
@@ -25,7 +25,7 @@ public interface UserDao extends BaseDao{
 	 * 用户登录
 	 * @param name 输入用户名
 	 * @param pass 输入密码
-	 * @return
+	 * @return 用户信息
 	 */
 	public UserVO login(String name, String pass);
 	/**
@@ -36,47 +36,48 @@ public interface UserDao extends BaseDao{
 	/**
 	 * 根据id查找用户
 	 * 
-	 * @param id 
+	 * @param id 用户的id
+	 * @return 用户信息
 	 */
 	public UserVO findUserByID(int id);
 	/**
 	 * 根据用户名查找用户
-	 * @param name
-	 * @return
+	 * @param name 用户名
+	 * @return 用户信息
 	 */
 	public UserVO  findUserByName(String name);
 	/**
 	 * 查询所有用户
-	 * @return
+	 * @return 用户信息
 	 */
 	public Vector<UserVO> findAll();
 	/**
 	 * 更新用户
-	 * @param user
-	 * @return
+	 * @param user 用户信息
+	 * @return true/false
 	 */
 	public boolean updateUser(UserVO user);
 	/**
 	 * 删除用户
-	 * @param id
-	 * @return
+	 * @param id 用户的id
+	 * @return true/false
 	 */
 	public boolean deleteUser(int id);
 	/**
 	 * 查询所有有效用户
-	 * @return
+	 * @return 用户信息集合
 	 */
 	public Vector<UserVO> findAllValid();
 	/**
 	 * 获取指定页的用户信息
-	 * @param pageNo
-	 * @param pageSize
-	 * @return
+	 * @param pageNo 页码
+	 * @param pageSize 页面大小
+	 * @return 用户信息集合
 	 */
 	public Vector<UserVO> findUsers(int pageNo, int pageSize);
 	/**
 	 * 获取记录数量
-	 * @return
+	 * @return 记录数量
 	 */
 	public int getRecordCount();
 }

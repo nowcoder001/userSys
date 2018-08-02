@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService{
 	 * 用户注册/添加用户
 	 * @param user 要添加的用户信息
 	 * @return 成功返回true，失败返回false
-	 * @throws ServiceException
+	 * @throws ServiceException 自定义的异常
 	 */
 	public boolean addUser(UserVO user) {
 		boolean flag = false;

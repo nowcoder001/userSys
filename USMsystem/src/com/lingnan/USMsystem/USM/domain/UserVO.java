@@ -20,14 +20,14 @@ public class UserVO {
 	
 	/**
 	 * 获取编号
-	 * @return
+	 * @return 用户的id
 	 */
 	public int getId() {
 		return id;
 	}
 	/**
 	 * 设置编号
-	 * @param id
+	 * @param id 编号
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -104,14 +104,14 @@ public class UserVO {
 	}
 	/**
 	 * 获取出生日期
-	 * @return
+	 * @return 出生日期
 	 */
 	public Date getBirth() {
 		return birth;
 	}
 	/**
 	 * 设置出生日期
-	 * @param birth
+	 * @param birth 出生日期
 	 */
 	public void setBirth(Date birth) {
 		this.birth = birth;
