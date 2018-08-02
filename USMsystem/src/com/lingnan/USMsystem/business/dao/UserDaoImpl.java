@@ -360,8 +360,8 @@ public class UserDaoImpl implements UserDao {
 		} catch (SQLException e) {
 			System.out.println("SQL语句运行错误......");
 		} finally {
-			DBUtils.closePreparedStatement(conn);
 			DBUtils.closeResultSet(conn);
+			DBUtils.closePreparedStatement(conn);
 		}
 		return v;
 	}
